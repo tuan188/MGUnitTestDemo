@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		174974791C224AD500B95AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174974781C224AD500B95AAF /* AppDelegate.swift */; };
-		1749747B1C224AD500B95AAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749747A1C224AD500B95AAF /* ViewController.swift */; };
 		1749747E1C224AD500B95AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1749747C1C224AD500B95AAF /* Main.storyboard */; };
 		174974801C224AD500B95AAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1749747F1C224AD500B95AAF /* Assets.xcassets */; };
 		174974831C224AD500B95AAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174974811C224AD500B95AAF /* LaunchScreen.storyboard */; };
 		1749748E1C224AD500B95AAF /* MGUnitTestDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749748D1C224AD500B95AAF /* MGUnitTestDemoTests.swift */; };
+		174974991C224B5A00B95AAF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174974981C224B5A00B95AAF /* UserService.swift */; };
+		1749749B1C224B7500B95AAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749749A1C224B7500B95AAF /* User.swift */; };
+		1749749D1C224B9B00B95AAF /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749749C1C224B9B00B95AAF /* UserServiceProtocol.swift */; };
+		1751C4431C29879500E1F338 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751C4421C29879500E1F338 /* UserListViewController.swift */; };
+		1751C4451C2987AC00E1F338 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751C4441C2987AC00E1F338 /* UserViewController.swift */; };
+		1751C4471C29880E00E1F338 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1751C4461C29880E00E1F338 /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +33,6 @@
 /* Begin PBXFileReference section */
 		174974751C224AD500B95AAF /* MGUnitTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGUnitTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174974781C224AD500B95AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1749747A1C224AD500B95AAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1749747D1C224AD500B95AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1749747F1C224AD500B95AAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		174974821C224AD500B95AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +40,12 @@
 		174974891C224AD500B95AAF /* MGUnitTestDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGUnitTestDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1749748D1C224AD500B95AAF /* MGUnitTestDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGUnitTestDemoTests.swift; sourceTree = "<group>"; };
 		1749748F1C224AD500B95AAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		174974981C224B5A00B95AAF /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		1749749A1C224B7500B95AAF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1749749C1C224B9B00B95AAF /* UserServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserServiceProtocol.swift; sourceTree = "<group>"; };
+		1751C4421C29879500E1F338 /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		1751C4441C2987AC00E1F338 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		1751C4461C29880E00E1F338 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +88,16 @@
 			isa = PBXGroup;
 			children = (
 				174974781C224AD500B95AAF /* AppDelegate.swift */,
-				1749747A1C224AD500B95AAF /* ViewController.swift */,
+				1751C4421C29879500E1F338 /* UserListViewController.swift */,
+				1751C4441C2987AC00E1F338 /* UserViewController.swift */,
+				1751C4461C29880E00E1F338 /* UserCell.swift */,
 				1749747C1C224AD500B95AAF /* Main.storyboard */,
 				1749747F1C224AD500B95AAF /* Assets.xcassets */,
 				174974811C224AD500B95AAF /* LaunchScreen.storyboard */,
 				174974841C224AD500B95AAF /* Info.plist */,
+				174974981C224B5A00B95AAF /* UserService.swift */,
+				1749749C1C224B9B00B95AAF /* UserServiceProtocol.swift */,
+				1749749A1C224B7500B95AAF /* User.swift */,
 			);
 			path = MGUnitTestDemo;
 			sourceTree = "<group>";
@@ -197,8 +212,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1749747B1C224AD500B95AAF /* ViewController.swift in Sources */,
+				1751C4431C29879500E1F338 /* UserListViewController.swift in Sources */,
+				1751C4451C2987AC00E1F338 /* UserViewController.swift in Sources */,
+				1749749D1C224B9B00B95AAF /* UserServiceProtocol.swift in Sources */,
+				1749749B1C224B7500B95AAF /* User.swift in Sources */,
 				174974791C224AD500B95AAF /* AppDelegate.swift in Sources */,
+				174974991C224B5A00B95AAF /* UserService.swift in Sources */,
+				1751C4471C29880E00E1F338 /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +408,7 @@
 				174974941C224AD500B95AAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		174974951C224AD500B95AAF /* Build configuration list for PBXNativeTarget "MGUnitTestDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +417,7 @@
 				174974971C224AD500B95AAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
