@@ -43,13 +43,41 @@ class UserListViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let user = users[indexPath.row]
+            userService.deleteUser(user)
+            users = userService.getAll()
+            tableView.reloadData()
+        }
+    }
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "presentUser" {
+            let controller = (segue.destinationViewController as! UINavigationController).topViewController as! UserViewController
+            controller.delegate = self
+        }
     }
+}
 
+extension UserListViewController: UserViewControllerDelegate {
+    func userViewControllerDone(sender: UserViewController) {
+        let user = sender.user
+        if user.id.isEmpty { // add user
+            user.id = NSUUID().UUIDString
+            userService.addUser(user)
+        }
+        else {
+            userService.updateUser(user)
+        }
+        users = userService.getAll()
+        tableView.reloadData()
+    }
 }

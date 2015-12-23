@@ -11,6 +11,6 @@ import Foundation
 protocol UserServiceProtocol {
     func getAll() -> [User]
     func addUser(user: User)
-    func editUser(user: User)
+    func updateUser(user: User)
     func deleteUser(user: User)
 }

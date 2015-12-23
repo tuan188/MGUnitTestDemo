@@ -9,6 +9,7 @@
 import UIKit
 
 class User: NSObject {
+    var id = ""
     var username = ""
     var email = ""
 }
