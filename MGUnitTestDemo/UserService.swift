@@ -10,20 +10,20 @@ import UIKit
 
 class UserService: NSObject, UserServiceProtocol {
     
-    var userDic = Dictionary<String, User>()
+    static var userDic = Dictionary<String, User>()
     
     func getAll() -> [User] {
-        return [User](userDic.values)
+        return [User](UserService.userDic.values)
     }
     
     func addUser(user: User)  {
-        userDic[user.id] = user
+        UserService.userDic[user.id] = user
     }
     
     func updateUser(user: User) {
-        userDic[user.id] = user
+        UserService.userDic[user.id] = user
     }
     func deleteUser(user: User) {
-        userDic.removeValueForKey(user.id)
+        UserService.userDic.removeValueForKey(user.id)
     }
 }

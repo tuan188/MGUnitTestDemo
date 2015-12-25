@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1722C3851C2BC9CE00976665 /* UserListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722C3841C2BC9CE00976665 /* UserListViewControllerTests.swift */; };
+		1722C38B1C2BD63000976665 /* UserListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722C38A1C2BD63000976665 /* UserListDataProvider.swift */; };
+		1722C38D1C2BD65400976665 /* UserListDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1722C38C1C2BD65400976665 /* UserListDataProviderProtocol.swift */; };
 		174974791C224AD500B95AAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174974781C224AD500B95AAF /* AppDelegate.swift */; };
 		1749747E1C224AD500B95AAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1749747C1C224AD500B95AAF /* Main.storyboard */; };
 		174974801C224AD500B95AAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1749747F1C224AD500B95AAF /* Assets.xcassets */; };
 		174974831C224AD500B95AAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174974811C224AD500B95AAF /* LaunchScreen.storyboard */; };
-		1749748E1C224AD500B95AAF /* MGUnitTestDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749748D1C224AD500B95AAF /* MGUnitTestDemoTests.swift */; };
 		174974991C224B5A00B95AAF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174974981C224B5A00B95AAF /* UserService.swift */; };
 		1749749B1C224B7500B95AAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749749A1C224B7500B95AAF /* User.swift */; };
 		1749749D1C224B9B00B95AAF /* UserServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1749749C1C224B9B00B95AAF /* UserServiceProtocol.swift */; };
@@ -31,6 +33,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1722C3841C2BC9CE00976665 /* UserListViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewControllerTests.swift; sourceTree = "<group>"; };
+		1722C38A1C2BD63000976665 /* UserListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListDataProvider.swift; sourceTree = "<group>"; };
+		1722C38C1C2BD65400976665 /* UserListDataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListDataProviderProtocol.swift; sourceTree = "<group>"; };
 		174974751C224AD500B95AAF /* MGUnitTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGUnitTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174974781C224AD500B95AAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1749747D1C224AD500B95AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +43,6 @@
 		174974821C224AD500B95AAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		174974841C224AD500B95AAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		174974891C224AD500B95AAF /* MGUnitTestDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MGUnitTestDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1749748D1C224AD500B95AAF /* MGUnitTestDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGUnitTestDemoTests.swift; sourceTree = "<group>"; };
 		1749748F1C224AD500B95AAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		174974981C224B5A00B95AAF /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		1749749A1C224B7500B95AAF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -66,6 +70,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1722C3861C2BD47900976665 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1751C4421C29879500E1F338 /* UserListViewController.swift */,
+				1751C4441C2987AC00E1F338 /* UserViewController.swift */,
+				1751C4461C29880E00E1F338 /* UserCell.swift */,
+				1722C38A1C2BD63000976665 /* UserListDataProvider.swift */,
+				1722C38C1C2BD65400976665 /* UserListDataProviderProtocol.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		1722C3871C2BD48300976665 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				174974981C224B5A00B95AAF /* UserService.swift */,
+				1749749C1C224B9B00B95AAF /* UserServiceProtocol.swift */,
+				1749749A1C224B7500B95AAF /* User.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
 		1749746C1C224AD500B95AAF = {
 			isa = PBXGroup;
 			children = (
@@ -87,17 +113,13 @@
 		174974771C224AD500B95AAF /* MGUnitTestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1722C3871C2BD48300976665 /* Service */,
+				1722C3861C2BD47900976665 /* UI */,
 				174974781C224AD500B95AAF /* AppDelegate.swift */,
-				1751C4421C29879500E1F338 /* UserListViewController.swift */,
-				1751C4441C2987AC00E1F338 /* UserViewController.swift */,
-				1751C4461C29880E00E1F338 /* UserCell.swift */,
 				1749747C1C224AD500B95AAF /* Main.storyboard */,
 				1749747F1C224AD500B95AAF /* Assets.xcassets */,
 				174974811C224AD500B95AAF /* LaunchScreen.storyboard */,
 				174974841C224AD500B95AAF /* Info.plist */,
-				174974981C224B5A00B95AAF /* UserService.swift */,
-				1749749C1C224B9B00B95AAF /* UserServiceProtocol.swift */,
-				1749749A1C224B7500B95AAF /* User.swift */,
 			);
 			path = MGUnitTestDemo;
 			sourceTree = "<group>";
@@ -105,7 +127,7 @@
 		1749748C1C224AD500B95AAF /* MGUnitTestDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				1749748D1C224AD500B95AAF /* MGUnitTestDemoTests.swift */,
+				1722C3841C2BC9CE00976665 /* UserListViewControllerTests.swift */,
 				1749748F1C224AD500B95AAF /* Info.plist */,
 			);
 			path = MGUnitTestDemoTests;
@@ -217,7 +239,9 @@
 				1749749D1C224B9B00B95AAF /* UserServiceProtocol.swift in Sources */,
 				1749749B1C224B7500B95AAF /* User.swift in Sources */,
 				174974791C224AD500B95AAF /* AppDelegate.swift in Sources */,
+				1722C38B1C2BD63000976665 /* UserListDataProvider.swift in Sources */,
 				174974991C224B5A00B95AAF /* UserService.swift in Sources */,
+				1722C38D1C2BD65400976665 /* UserListDataProviderProtocol.swift in Sources */,
 				1751C4471C29880E00E1F338 /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,7 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1749748E1C224AD500B95AAF /* MGUnitTestDemoTests.swift in Sources */,
+				1722C3851C2BC9CE00976665 /* UserListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

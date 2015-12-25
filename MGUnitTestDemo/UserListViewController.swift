@@ -10,49 +10,25 @@ import UIKit
 
 class UserListViewController: UITableViewController {
     
-    let userService: UserServiceProtocol = UserService()
-    
-    var users: [User]!
+    var userListDataProvider: UserListDataProviderProtocol!
+    let userSegueIdentifier = "presentUser"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        users = userService.getAll()
+        
+        userListDataProvider = UserListDataProvider()
+        userListDataProvider.tableView = self.tableView
+        tableView.dataSource = userListDataProvider
     }
     
     @IBAction func onAddButtonClicked(sender: UIBarButtonItem) {
-        self.performSegueWithIdentifier("presentUser", sender: nil)
+        self.performSegueWithIdentifier(userSegueIdentifier, sender: nil)
     }
     
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath) as! UserCell
-        let user = users[indexPath.row]
-        cell.userNameLabel.text = user.username
-        cell.emailLabel.text = user.email
-        return cell
-    }
-
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            let user = users[indexPath.row]
-            userService.deleteUser(user)
-            users = userService.getAll()
-            tableView.reloadData()
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let user = userListDataProvider[indexPath.row]
+        if user != nil  {
+            self.performSegueWithIdentifier(userSegueIdentifier, sender: user)
         }
     }
 
@@ -60,9 +36,10 @@ class UserListViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "presentUser" {
+        if segue.identifier == userSegueIdentifier {
             let controller = (segue.destinationViewController as! UINavigationController).topViewController as! UserViewController
             controller.delegate = self
+            controller.user = sender as? User
         }
     }
 }
@@ -72,12 +49,11 @@ extension UserListViewController: UserViewControllerDelegate {
         let user = sender.user
         if user.id.isEmpty { // add user
             user.id = NSUUID().UUIDString
-            userService.addUser(user)
+            userListDataProvider.addUser(user)
         }
         else {
-            userService.updateUser(user)
+            userListDataProvider.updateUser(user)
         }
-        users = userService.getAll()
-        tableView.reloadData()
+        userListDataProvider.fetch()
     }
 }
