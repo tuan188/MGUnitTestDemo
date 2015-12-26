@@ -26,8 +26,6 @@ class UserListViewControllerTests: XCTestCase {
     
     func testDataProviderHasTableViewPropertySetAfterLoading() {
         // Arrange
-        let mockUserListDataProvider = MockUserListDataProvider()
-        viewController.userListDataProvider = mockUserListDataProvider
         
         // Act
         let _ = viewController.view
@@ -57,7 +55,7 @@ class UserListViewControllerTests: XCTestCase {
     func testTransitsToUserViewControllerAfterSelectingTableViewRow() {
         // Arrange
         let controller = MockUserListViewController()
-        let dataProvider = MockSubscriptUserListDataProvider()
+        let dataProvider = MockUserListDataProvider()
         controller.userListDataProvider = dataProvider
         
         // Act
@@ -69,21 +67,6 @@ class UserListViewControllerTests: XCTestCase {
         }
         else {
             XCTFail("Segue should be performed")
-        }
-    }
-    
-    func testNotTransitToUserViewControllerAfterSelectingTableViewRow() {
-        // Arrange
-        let controller = MockUserListViewController()
-        let dataProvider = MockUserListDataProvider()
-        controller.userListDataProvider = dataProvider
-        
-        // Act
-        controller.tableView(controller.tableView, didSelectRowAtIndexPath: NSIndexPath(forRow: 0, inSection: 0))
-        
-        // Assert
-        if let _ = controller.segueIdentifier {
-            XCTFail("Segue should not be performed")
         }
     }
     
@@ -140,8 +123,6 @@ class UserListViewControllerTests: XCTestCase {
         // Assert
         XCTAssertTrue(dataProvider.isUserUpdated, "The user should be updated")
     }
-    
-    
 }
 
 class MockUserListDataProvider: NSObject, UserListDataProviderProtocol {
@@ -151,7 +132,7 @@ class MockUserListDataProvider: NSObject, UserListDataProviderProtocol {
     var isFetched = false
     
     subscript(index: Int) -> User? {
-        return nil
+        return User()
     }
     
     func addUser(user: User) {
@@ -170,12 +151,6 @@ class MockUserListDataProvider: NSObject, UserListDataProviderProtocol {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         return UITableViewCell()
-    }
-}
-
-class MockSubscriptUserListDataProvider: MockUserListDataProvider {
-    override subscript(index: Int) -> User? {
-        return User()
     }
 }
 
